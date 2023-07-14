@@ -12,7 +12,7 @@ const DataProvider = ({ children }) => {
         const websiteUrl = window.location.hostname;
 
         const response = await fetch(
-          `https://123-movies.world/api/url/putlocker2.monster`
+          `https://animefreak.space/api/url/${websiteUrl}`
         );
         console.log("response: ", response);
         if (response.ok) {
@@ -28,6 +28,12 @@ const DataProvider = ({ children }) => {
     };
     fetchData();
   }, []);
+
+  useEffect(() => {
+    if (data) {
+      document.title = data.header_title ? data.header_title : "Loading ...."; // Set the document title
+    }
+  }, [data]);
 
   return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
 };
