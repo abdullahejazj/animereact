@@ -114,54 +114,7 @@ export default function Schedule({ data, scheduleData, time }) {
             <div
               className="snap-start flex-shrink-0 h-[240px] overflow-y-scroll scrollbar-thin scrollbar-thumb-secondary scrollbar-thumb-rounded w-full"
               style={{ scrollbarGutter: "stable" }}
-            >
-              <div className="flex flex-col gap-2 px-2 pt-2">
-                {scheduleData[days[currentPage]]
-                  ?.filter((show, index, self) => {
-                    return index === self.findIndex((s) => s.id === show.id);
-                  })
-                  ?.map((i, index) => {
-                    const currentTime = Date.now();
-                    const hasAired = i.airingAt < currentTime;
-
-                    return (
-                      <Link
-                        key={`${i.id}-${index}`}
-                        href={`/en/anime/${i.id}`}
-                        className={`${
-                          hasAired ? "opacity-40" : ""
-                        } h-full w-full flex items-center p-2 flex-shrink-0 hover:bg-secondary cursor-pointer`}
-                      >
-                        <div className="shrink-0">
-                          {i.coverImage && (
-                            <Image
-                              src={i.coverImage}
-                              alt={`${i.title.romaji} cover`}
-                              width={300}
-                              height={300}
-                              className="w-10 h-10 object-cover rounded"
-                            />
-                          )}
-                        </div>
-                        <div className="flex items-center justify-between w-full">
-                          <div className="font-karla px-2">
-                            <h1 className="font-semibold text-sm line-clamp-1">
-                              {i.title.romaji}
-                            </h1>
-                            <p className="font-semibold text-xs text-gray-400">
-                              {convertUnixToTime(i.airingAt)} - Episode{" "}
-                              {i.airingEpisode}
-                            </p>
-                          </div>
-                          <div>
-                            <PlayIcon className="w-6 h-6 text-gray-300" />
-                          </div>
-                        </div>
-                      </Link>
-                    );
-                  })}
-              </div>
-            </div>
+            ></div>
             <div className="flex items-center bg-tersier justify-between font-karla p-2 border-t border-secondary/40">
               <button
                 type="button"
