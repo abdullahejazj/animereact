@@ -312,7 +312,7 @@ export default function Index() {
 
           {/* Home Section */}
 
-          <Link href="/en/search/manga">
+          <Link href="/en/search/manga/">
             {" "}
             <div className="bg-blue-400 cursor-pointer pr-20 pl-20 pt-5 pb-5 text-2xl rounded-lg">
               Visit Website
