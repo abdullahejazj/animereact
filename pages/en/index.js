@@ -7,10 +7,11 @@ import Link from "next/link";
 import Head from "next/head";
 
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { aniAdvanceSearch } from "../lib/anilist/aniAdvanceSearch";
+
 import DataContext from "../../context/DataContext";
 import Footer from "../../components/footer";
 import Navbar from "../../components/navbar";
+import { aniAdvanceSearch } from "../../lib/anilist/aniAdvanceSearch";
 
 const genre = [
   "Action",
