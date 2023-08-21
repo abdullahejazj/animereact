@@ -3,13 +3,14 @@ import { AnimatePresence, motion as m } from "framer-motion";
 import Skeleton from "react-loading-skeleton";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import Navbar from "../components/navbar";
+
 import Head from "next/head";
-import Footer from "../components/footer";
 
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { aniAdvanceSearch } from "../lib/anilist/aniAdvanceSearch";
-import DataContext from "../context/DataContext";
+import DataContext from "../../context/DataContext";
+import Footer from "../../components/footer";
+import Navbar from "../../components/navbar";
 
 const genre = [
   "Action",
